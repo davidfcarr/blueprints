@@ -163,6 +163,7 @@ function playground_test() {
     $cddate = rsvpmaker_date('Y-m-d H:i:s',$t);
     $end = rsvpmaker_date('Y-m-d H:i:s',$t + HOUR_IN_SECONDS);
     rsvpmaker_add_event_row ($post_id, $cddate, $end, 'set');
+    update_post_meta($post_id,'_rsvp_on',1);
 
     $t += WEEK_IN_SECONDS;
     $new['post_title'] = 'Farm Market Asado';
@@ -335,5 +336,6 @@ function playground_test() {
     $cddate = rsvpmaker_date('Y-m-d H:i:s',$t);
     $end = rsvpmaker_date('Y-m-d H:i:s',$t + HOUR_IN_SECONDS);
     rsvpmaker_add_event_row ($post_id, $cddate, $end, 'set');
+    update_post_meta($post_id,'_rsvp_on',1);
 
 }
