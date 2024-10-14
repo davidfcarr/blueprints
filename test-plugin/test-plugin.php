@@ -21,6 +21,15 @@ Plugin Name: Playground Test
 
 */
 
+add_action('admin_init','playground_test_now');
+function playground_test_now() {
+    $done = get_option('playground_test');
+    if($done)
+        return;
+    playground_test();
+    update_option('playground_test',true);
+}
+
 function playground_test() {
     $new['post_title'] = 'Playground Test';
     $new['post_type'] = 'page';
