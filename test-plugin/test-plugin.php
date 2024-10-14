@@ -301,9 +301,8 @@ function playground_test() {
     update_post_meta($post_id,'_rsvp_on',1);
     update_post_meta($post_id,'_rsvp_rsvpmaker_send_confirmation_email', '1');
     update_post_meta($post_id,'_calendar_icons', '1');
-    update_post_meta($post_id,'_per', unserialize('a:2:{s:4:\"unit\";a:1:{i:0;s:7:\"Tickets\";}s:5:\"price\";a:1:{i:0;s:0:\"\";}}'));
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
-    update_post_meta($post_id,'pricing', unserialize('a:1:{i:0;O:8:\"stdClass\":6:{s:4:\"unit\";s:7:\"Dinners\";s:5:\"price\";s:6:\"180.00\";s:12:\"deadlineDate\";s:0:\"\";s:12:\"deadlineTime\";s:0:\"\";s:14:\"price_multiple\";i:1;s:14:\"price_deadline\";N;}}'));
+    update_post_meta($post_id,'pricing', array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>"","deadlineTime"=>"","price_multiple"=>1,"price_deadline"=>""));
 
     $t += WEEK_IN_SECONDS;
     $new['post_title'] = 'Dia de los Muertes';
@@ -462,9 +461,8 @@ function playground_test() {
     update_post_meta($post_id,'_rsvp_on',1);
     update_post_meta($post_id,'_rsvp_rsvpmaker_send_confirmation_email', '1');
     update_post_meta($post_id,'_calendar_icons', '1');
-    update_post_meta($post_id,'_per', unserialize('a:2:{s:4:\"unit\";a:1:{i:0;s:7:\"Tickets\";}s:5:\"price\";a:1:{i:0;s:0:\"\";}}'));
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
-    update_post_meta($post_id,'pricing', unserialize('a:1:{i:0;O:8:\"stdClass\":6:{s:4:\"unit\";s:7:\"Dinners\";s:5:\"price\";s:6:\"180.00\";s:12:\"deadlineDate\";s:0:\"\";s:12:\"deadlineTime\";s:0:\"\";s:14:\"price_multiple\";i:1;s:14:\"price_deadline\";N;}}'));
+    update_post_meta($post_id,'pricing', array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>"","deadlineTime"=>"","price_multiple"=>1,"price_deadline"=>""));
 
     global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules();
 }
