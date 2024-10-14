@@ -33,8 +33,45 @@ function playground_test_now() {
 function playground_test() {
     $new['post_title'] = 'Playground Test';
     $new['post_type'] = 'page';
-    $new['post_content'] = '<p>These are the times that try men\'s souls.</p>
-    [rsvpmaker_upcoming cal="1" calendar="1"]';
+    $new['post_content'] = '<!-- wp:paragraph -->
+<p>These demo events are based on the dinners hosted by Swank Specialty Produce, Loxahatchee, Florida (<a href="https://www.swankspecialtyproduce.com/">swankspecialtyproduce.com</a>).</p>
+<!-- /wp:paragraph -->
+    
+    <!-- wp:query {"queryId":0,"query":{"perPage":20,"pages":0,"offset":0,"postType":"rsvpmaker","order":"asc","author":"","search":"","exclude":[],"sticky":"","inherit":false,"eventOrder":"future","excludeType":"","taxQuery":{"rsvpmaker-type":[]}},"namespace":"rsvpmaker/rsvpmaker-loop"} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":"1"}} -->
+<!-- wp:cover {"useFeaturedImage":true,"dimRatio":50,"customOverlayColor":"#534850","isUserOverlayColor":true,"className":"swankcover","style":{"dimensions":{"aspectRatio":"auto"},"elements":{"link":{"color":{"text":"var:preset|color|base-2"}}}},"textColor":"base-2","layout":{"type":"constrained"}} -->
+<div class="wp-block-cover swankcover has-base-2-color has-text-color has-link-color"><span aria-hidden="true" class="wp-block-cover__background has-background-dim" style="background-color:#534850"></span><div class="wp-block-cover__inner-container"><!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base-2"}}}},"textColor":"base-2"} /-->
+
+<!-- wp:rsvpmaker/rsvpdateblock {"alignment":"center"} /--></div></div>
+<!-- /wp:cover -->
+
+<!-- wp:rsvpmaker/loop-blocks -->
+<div class="wp-block-rsvpmaker-loop-blocks"><!-- wp:read-more {"content":"Read More \u003e\u003e","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|10"}}}} /-->
+
+<!-- wp:rsvpmaker/button -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"style":{"className":"rsvplink","color":{"background":"#61bf22"}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link has-background wp-element-button" href="#rsvpnow" style="background-color:#61bf22">Buy Now!</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+<!-- /wp:rsvpmaker/button --></div>
+<!-- /wp:rsvpmaker/loop-blocks -->
+<!-- /wp:post-template -->
+
+<!-- wp:query-pagination -->
+<!-- wp:query-pagination-previous /-->
+
+<!-- wp:query-pagination-numbers /-->
+
+<!-- wp:query-pagination-next /-->
+<!-- /wp:query-pagination -->
+
+<!-- wp:query-no-results -->
+<!-- wp:paragraph -->
+<p>No events found.</p>
+<!-- /wp:paragraph -->
+<!-- /wp:query-no-results --></div>
+<!-- /wp:query -->';
     $new['post_status'] = 'publish';
     $home = wp_insert_post($new);
     update_option('show_on_front','page');
