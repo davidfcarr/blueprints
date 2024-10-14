@@ -1,5 +1,6 @@
 {
-	"landingPage": "/wp-admin/",
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+    "landingPage": "/wp-admin/",
 	"preferredVersions": {
 		"php": "7.4",
 		"wp": "6.5"
@@ -10,8 +11,17 @@
 	"steps": [
 		{
 			"step": "login",
-			"username": "admin",
-			"password": "password"
-		}
+			"username": "admin"
+		},
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "wordpress.org/plugins",
+                "slug": "rsvpmaker"
+            },
+            "options": {
+                "activate": true
+            }
+        }
 	]
 }
