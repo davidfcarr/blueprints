@@ -19,7 +19,6 @@ Plugin Name: Playground Test
 			"code": "<?php include 'wordpress/wp-load.php'; playground_test(); "
 		},
 
-*/
 
 add_action('admin_init','playground_test_now');
 function playground_test_now() {
@@ -29,6 +28,7 @@ function playground_test_now() {
     playground_test();
     update_option('playground_test',true);
 }
+*/
 
 function playground_test() {
     $new['post_title'] = 'Playground Test';
