@@ -3,6 +3,24 @@
 Plugin Name: Playground Test
 */
 
+/*
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "url",
+                "url": "https://raw.githubusercontent.com/davidfcarr/blueprints/refs/heads/main/test-plugin.zip"
+            },
+            "options": {
+                "activate": true
+            }    
+        },
+        {
+			"step": "runPHP",
+			"code": "<?php include 'wordpress/wp-load.php'; playground_test(); "
+		},
+
+*/
+
 function playground_test() {
     $new['post_title'] = 'Playground Test';
     $new['post_type'] = 'page';

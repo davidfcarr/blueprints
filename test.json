@@ -20,20 +20,6 @@
             }
         },
         {
-            "step": "installPlugin",
-            "pluginData": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/davidfcarr/blueprints/refs/heads/main/test-plugin.zip"
-            },
-            "options": {
-                "activate": true
-            }    
-        },
-        {
-			"step": "runPHP",
-			"code": "<?php include 'wordpress/wp-load.php'; playground_test(); "
-		},
-        {
             "step": "setSiteOptions",
             "options": {
                 "blogname": "RSVPMaker Test",
