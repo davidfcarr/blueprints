@@ -303,8 +303,6 @@ function playground_test() {
     update_post_meta($post_id,'_calendar_icons', '1');
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
     update_post_meta($post_id,'pricing', array( (object) array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null)));
-    $thumb_id = media_sideload_image( 'https://www.swankspecialtyproduce.com/wp-content/uploads/2024/08/70ssss.jpeg', $post_id,  $new['post_title'], 'id' );
-    set_post_thumbnail($post_id,$thumb_id);  
 
     $t += WEEK_IN_SECONDS;
     $new['post_title'] = 'Dia de los Muertes';
@@ -465,10 +463,26 @@ function playground_test() {
     update_post_meta($post_id,'_calendar_icons', '1');
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
     update_post_meta($post_id,'pricing', array( (object) array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null)));
-    $thumb_id = media_sideload_image( 'https://www.swankspecialtyproduce.com/wp-content/uploads/2023/08/carrot-crop-scaled.jpg', $post_id, $new['post_title'], 'id' );
-    set_post_thumbnail($post_id,$thumb_id);  
   
     //global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules();
 }
 
 add_action( 'after_setup_theme', function() { global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules(); } );
+
+add_action('init','add_thumbs');
+function add_thumbs() {
+$done = get_option('rsvp_thumbs_added');
+if($done)
+    return;
+    update_option('rsvp_thumbs_added',true);
+
+    $events = get_future_events();
+    foreach($events as $event) {
+        $post_id = $event->ID;
+        $thumb_id = media_sideload_image( 'https://www.swankspecialtyproduce.com/wp-content/uploads/2024/08/70ssss.jpeg', $post_id,  $event->post_title, 'id' );
+        set_post_thumbnail($post_id,$thumb_id);  
+        $thumb_id = media_sideload_image( 'https://www.swankspecialtyproduce.com/wp-content/uploads/2023/08/carrot-crop-scaled.jpg', $post_id, $event->post_title, 'id' );
+        set_post_thumbnail($post_id,$thumb_id);  
+    }
+    
+}
