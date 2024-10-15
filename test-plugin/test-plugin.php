@@ -464,5 +464,5 @@ function playground_test() {
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
     update_post_meta($post_id,'pricing', array(array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null)));
 
-    global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules();
+    //global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules();
 }
