@@ -1,0 +1,1 @@
+zip -r test-plugin test-plugin
