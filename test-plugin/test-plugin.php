@@ -302,7 +302,7 @@ function playground_test() {
     update_post_meta($post_id,'_rsvp_rsvpmaker_send_confirmation_email', '1');
     update_post_meta($post_id,'_calendar_icons', '1');
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
-    update_post_meta($post_id,'pricing', array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null));
+    update_post_meta($post_id,'pricing', array(array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null)));
 
     $t += WEEK_IN_SECONDS;
     $new['post_title'] = 'Dia de los Muertes';
@@ -462,7 +462,7 @@ function playground_test() {
     update_post_meta($post_id,'_rsvp_rsvpmaker_send_confirmation_email', '1');
     update_post_meta($post_id,'_calendar_icons', '1');
     update_post_meta($post_id,'_payment_gateway', 'PayPal REST API');
-    update_post_meta($post_id,'pricing', array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null));
+    update_post_meta($post_id,'pricing', array(array("unit"=>"Dinners","price"=>"180.00","deadlineDate"=>null,"deadlineTime"=>null,"price_multiple"=>1,"price_deadline"=>null)));
 
     global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules();
 }
